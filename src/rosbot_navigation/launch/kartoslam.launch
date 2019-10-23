@@ -1,0 +1,13 @@
+<!--
+Provides a reasonable set of parameters for running Karto on a robot
+Assumes an 'odom_combined' frame, that provides reasonably accurate odometry
+-->
+
+<launch>
+  <node pkg="slam_karto" type="slam_karto" name="slam_karto" output="screen">
+    <remap from="scan" to="/rosbot/laser/scan"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="base_frame" value="chassis" />
+   
+  </node>
+</launch>
